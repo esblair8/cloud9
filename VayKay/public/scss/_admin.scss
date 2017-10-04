@@ -1,0 +1,1077 @@
+/*================= 16 ADMIN ==================*/
+/*=== 16.1 DASHBOARD MENU ===*/
+.dashboardMenu{
+  background: #262a2e;
+  .navbar{
+    margin: 0;
+    .navbar-collapse{
+      float: none;
+      @include tablet{
+        float: left;
+      }
+    }
+  }
+  .dashboradNav{
+    .navbar-header{
+      .navbar-toggle{
+        float: left;
+        margin-left: 10px;
+        margin-top: 13px;
+        .icon-bar{
+          background-color: #333;
+        }
+      }
+      display: inline-block;
+    }
+    .dashboardNavLeft {
+      >li{
+        >a{
+          border-bottom: 0;
+          font-size: 13px;
+          line-height: 20px;
+          text-transform: capitalize;
+          @include tablet{
+            color: rgba(255, 255, 255, .4) !important;
+            padding: 10px 5px 7px 0;
+            margin-bottom: 15px;
+            margin-top: 11px;
+          }
+          @include desktops{
+            font-size: 14px;
+            padding: 10px 17px 7px 0;
+          }
+          @include large-desktops{
+            padding: 10px 20px 7px 0;
+          }
+          &.active{
+            @include tablet{
+              color: #fff !important;
+            }
+          }
+
+          &:after{
+            background-color: transparent;
+          }
+          &:hover,
+          &:focus{
+            background-color: transparent;
+            color: rgb(255, 255, 255) !important;
+          }
+          &:active{
+            color: #fff;
+          }
+          i.fa{
+            margin-right: 10px;
+            @include tablet{
+              margin-right: 5px;
+            }
+            @include desktops{
+              margin-right: 10px;
+            }
+          }
+        }
+        &.dropdown.singleDrop{
+          .dropdown-menu li a{
+            padding: 5px 12px;
+          }
+        }
+
+      }
+
+    }
+    .dashboardNavRight{
+      float: right;
+      .NavRight{
+        .singleDrop{
+          display: inline-block;
+          padding: 13px 8px;
+          @include tablet{
+            padding: 20px 8px;
+          }
+          a{
+            position: relative;
+            color: $text-title;
+            border-bottom: 0;
+            .notifyNumber{
+              color: $white-color;
+              background-color: $primary-color;
+              position: absolute;
+              top: -17px;
+              left: 52px;
+              padding: 0px 5px;
+              @include border-radius (3px);
+              z-index: 20;
+              font-size: 11px;
+              line-height: 1.5;
+            }
+            &:after{
+              background-color: transparent;
+            }
+            &:hover{
+              background-color: transparent;
+              color: $text-title;
+            }
+            &:focus{
+              background-color: transparent;
+            }
+            img{
+              width: 34px;
+              height: 34px;
+              @include border-radius(50%);
+              @include mobile-xs{
+                position: static;
+              }
+              @include tablet{
+                position: absolute;
+              }
+              top: -9px;
+              left: 0;
+            }
+            .fa{
+              @include mobile-xs{
+                margin-left: 44px;
+                font-size: 14px;
+                color: rgba(255, 255, 255, .4);
+              }
+
+            }
+            .fa-angle-down{
+              @include mobile-xs{
+                display: none;
+              }
+              @include tablet{
+                display: block;
+              }
+            }
+          }
+          .dropdownMenu{
+            right: -10px;
+            left: auto;
+            min-width: 228px;
+            top: 98%;
+            -webkit-box-shadow: none;
+            box-shadow: none;
+            @include tablet{
+              min-width: 320px;
+            }
+            li{
+              border-bottom: 1px solid #e5e5e5;
+              &:last-child{
+                border-bottom: 0;
+              }
+              a{
+                position: relative;
+                @include transition(all 0.3s ease-in-out);
+                h4{
+                  font-size: 20px;
+                  font-weight: 400;
+                  text-transform: capitalize;
+                  margin-bottom: 0;
+                  padding: 10px 0;
+                }
+                h5{
+                  font-size: 15px;
+                }
+                p{
+                  font-size: 12px;
+                  line-height: 20px;
+                }
+                .fa{
+                  @include mobile-xs{
+                    position: relative;
+                  }
+                  @include desktops{
+                    position: absolute;
+                  }
+                  top: 20px;
+                  right: 13px;
+                  font-size: 15px;
+                  @include opacity (0);
+                  transition: all
+                }
+              }
+              &:hover{
+                background: #fafafa;
+              }
+              &:hover .fa{
+                @include opacity (1);
+              }
+            }
+            &:before{
+              position: absolute;
+              content: "";
+              background: #fff;
+              width: 12px;
+              height: 12px;
+              @include border-radius(3px 0 0 0);
+              @include transform(rotate(45deg));
+              @include   box-shadow(-2px -2px 2px rgba(0,0,0,0.08));
+              top: -6px;
+              right: 16px;
+              @include mobile-xs{
+                display: none;
+              }
+              @include tablet{
+                display: block;
+              }
+            }
+          }
+
+        }
+      }
+    }
+
+  }
+}
+
+
+/*=== 16.2 WELCOME SECTION ===*/
+.welcomeSection{
+  margin-top: 80px;
+  margin-bottom: 45px;
+  h2{
+    color: #222;
+    font-size: 22px;
+    line-height: 22px;
+    font-weight: 600;
+    span{
+      color: $primary-color;
+    }
+  }
+}
+
+/*=== 16.3 ALERT SECTION ===*/
+.alertSection{
+  .alert{
+    min-height: $base*14;
+    margin-bottom: $base*4;
+    background-size: 50px 90px;
+    background-repeat: no-repeat;
+    display: block;
+    @include mobile-all{
+      line-height: $base*4;
+      padding: $base*3 $base*13 0 $base*1;
+      font-size: $base*2+1px;
+    }
+    @include tablet{
+      padding: 0 0 0 0px;
+      font-size: $base-xs*7;
+    }
+    @include desktops{
+      min-height: $base*18;
+      line-height: $base*18;
+      padding: 0 0 0 0px;
+      font-size: $base*3+1;
+    }
+    i{
+      width: 50px;
+      height: auto;
+      line-height: 90px;
+      display: none;
+      text-align: center;
+      color: #fff;
+      border-top-left-radius: 5px;
+      border-bottom-left-radius: 5px;
+      margin-right: 20px;
+      @include tablet{
+        display: inline-block;
+      }
+    }
+    .fa-check{
+      background-color: #60a662;
+    }
+    .fa-info{
+      background-color: #e25a5a;
+    }
+  }
+  .alert-dismissable .close, .alert-dismissible .close {
+    position: absolute;
+    top: -10px;
+    right: $base*4;
+    height: $base*18;
+    padding-right: $base*2;
+    @include opacity(1);
+    @include mobile-all{
+      font-size: 10px;
+    }
+    @include tablet{
+      padding-right: $base*5;
+      top:0;
+      font-size: $base-xs*7;
+      padding-right: $base*2;
+    }
+    &:hover,
+    &:active,
+    &:focus{
+      color: inherit;
+    }
+  }
+
+}
+
+/*=== 16.4 DASHBOARD COLOR ===*/
+.bg-blue-c {
+  background-color: #1ab3e8;
+}
+.bg-red-c {
+  background-color: #e25a5a;
+}
+.bg-green-c {
+  background-color: #1cd066;
+}
+.bg-orange-c {
+  background-color: #fa9335;
+}
+.bg-ash{
+  background-color: #f5f5f5;
+}
+
+.bg-blue-b {
+  background-color: #18a8da;
+}
+.bg-red-b {
+  background-color: #d55555;
+}
+.bg-green-b {
+  background-color: #1ac460;
+}
+.bg-orange-b {
+  background-color: #eb8a32;
+}
+
+/*=== 16.5 DASHBOARD BLOCK SECTION ===*/
+.blockSection{
+  margin: 30px 0;
+  .content-block {
+    @include border-radius(3px);
+    margin-bottom:15px;
+    color: #fff;
+    .media {
+      padding: 40px 20px;
+    }
+    h4 {
+      color: #fff;
+      font-size: 26px;
+    }
+    p{
+      color: #fff;
+    }
+    .icon {
+      display: block;
+      width: 60px;
+      height: 60px;
+      border: 1px solid #fff;
+      @include border-radius (50%);
+      font-size: 30px;
+      line-height: 60px;
+      text-align: center;
+      @include opacity (1);
+
+    }
+    .btn-content {
+      display: block;
+      text-align:left;
+      padding:13px 20px;
+      color: #fff;
+      text-transform: capitalize;
+      @include opacity (1);
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+      i {
+        float:right;
+      }
+    }
+  }
+}
+
+/*=== 16.6 DASHBOARD RECENT ACTIVITY SECTION ===*/
+.recentActivitySection{
+  margin-bottom: 50px;
+  .recentActivityContent{
+    padding: 10px;
+    @include border-radius (5px);
+    @include tablet{
+      padding: 20px;
+    }
+    @include desktops{
+      padding: 30px;
+    }
+  }
+  .dashboardPageTitle{
+    h2{
+      font-size: 24px;
+      font-weight: 400;
+      margin-bottom: 15px;
+    }
+  }
+  .listingsTable{
+    margin-bottom: 0px;
+    .rowItem{
+      background-color: #fff;
+      h4{
+        margin-bottom: 7px;
+        color: $primary-color;
+        font-size: 12px;
+        @include tablet{
+          font-size: 16px;
+        }
+        text-transform: capitalize;
+        font-weight: 400;
+        a{
+          color: #222;
+        }
+      }
+      p{
+        text-transform: uppercase;
+        font-size: 9px;
+        line-height: 9px;
+        @include tablet{
+          font-size: 14px;
+          line-height: 21px
+        }
+      }
+      .dateTd{
+        width: auto;
+        @include desktops{
+          width: 10%;
+        }
+        .date{
+          display: none;
+          @include tablet{
+            display: block;
+          }
+          color: #fff;
+          background-color: $primary-color;
+          width: 55px;
+          height: 58px;
+          @include border-radius(3px);
+          text-align: center;
+          font-size: 22px;
+          font-weight: 600;
+          margin: auto ;
+          span{
+            display: block;
+            font-size: 14px;
+          }
+        }
+      }
+      .iconTd{
+        width: auto;
+        @include desktops{
+          width: 5%;
+        }
+        .icon{
+          display: block;
+          width: 45px;
+          height: 45px;
+          font-size: 20px;
+          line-height: 40px;
+          border: 1px solid;
+          @include border-radius (50%);
+          text-align: center;
+          margin: 0 7px;
+          &.br-orange{
+            border-color: $primary-color;
+            color: $primary-color;
+          }
+          &.br-blue{
+            border-color: #1ab3e8;
+            color: #1ab3e8;
+          }
+          &.br-green{
+            border-color: #1cd066;
+            color: #1cd066;
+          }
+          &.br-red{
+            border-color: #e25a5a;
+            color: #e25a5a;
+          }
+        }
+      }
+
+      .packageTd{
+        width: auto;
+        @include desktops{
+          width: 35%;
+          margin-left: 15px;
+        }
+        h4{
+          margin-top: 15px;
+        }
+
+
+      }
+      .priceTd{
+        width: auto;
+        position: relative;
+        padding-right: 5px;
+        @include tablet{
+          padding-right: 15px;
+        }
+        @include desktops{
+          width: 30%;
+        }
+        h4{
+          font-size: 14px;
+          font-weight: 400;
+          margin-bottom: 0;
+          margin-top: 12px;
+          @include tablet{
+            font-size: 22px;
+            font-weight: 600;
+          }
+        }
+        p{
+          font-size: 8px;
+          @include tablet{
+            font-size: 12px;
+          }
+        }
+        &:after{
+          position: absolute;
+          width: 1px;
+          height: 50px;
+          background-color: #e5e5e5;
+          content: '';
+          right: 0;
+          top: 9%;
+          display: none;
+          @include tablet{
+            top: 12%;
+            height: 70px;
+            display: block;
+          }
+
+        }
+      }
+      .bookingTd{
+        width: auto;
+        padding-left: 5px;
+
+        @include tablet{
+          width: 20%;
+          padding-left: 15px;
+        }
+        .list-inline{
+          display: none;
+          @include tablet{
+            display: block;
+          }
+        }
+        h4{
+          font-size: 9px;
+          @include tablet{
+            font-size: 11px;
+          }
+          margin-bottom: 0;
+        }
+        p{
+          margin-bottom: 3px;
+          font-size: 9px;
+          @include tablet{
+            font-size: 11px;
+          }
+        }
+      }
+      &:hover{
+        background-color: #fff9f4
+      }
+    }
+  }
+}
+.table>tbody>tr>td,
+.table>tbody>tr>th,
+.table>tfoot>tr>td,
+.table>tfoot>tr>th,
+.table>thead>tr>td,
+.table>thead>tr>th{
+  vertical-align: middle;
+  padding: 10px 0;
+}
+
+/*=== 16.7 DASHBOARD RECENT OFFER SECTION ===*/
+.recentOfferSection{
+  margin-top: 30px;
+  margin-bottom: 80px;
+  .recentOfferContent{
+    padding: 10px;
+    @include border-radius (5px);
+    @include tablet{
+      padding: 20px;
+    }
+    @include desktops{
+      padding: 30px;
+    }
+
+    /* Benifit Aria*/
+    .benefitsAria{
+      h4{
+        font-size: 15px;
+        font-weight: 400;
+        color: $text-title;
+        padding-top: 15px;
+        @include tablet{
+          padding-top: 0px;
+        }
+      }
+      .benifitsContent{
+        padding: 10px;
+        @include border-radius (5px);
+        background-color: #fff;
+        @include tablet{
+          padding: 15px;
+        }
+        @include desktops{
+          padding: 30px;
+        }
+        ul{
+          li{
+            margin-bottom: 9px;
+            a{
+              color: lighten(desaturate(adjust-hue($primary-color, -28.5333), 100.0000), 2.9412);
+              @include tablet{
+                font-size: 13px;
+              }
+              @include desktops{
+                font-size: 14px;
+              }
+
+              i{
+                margin-right: 11px;
+                color: $primary-color;
+              }
+              &:hover,
+              &:active,
+              &:focus{
+                color: $primary-color;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  /* Recent Offer Contetnt */
+  .recentOfferAria{
+    h4{
+      font-size: 15px;
+      font-weight: 400;
+      color: $text-title;
+      padding-top: 15px;
+      @include tablet{
+        padding-top: 0px;
+      }
+    }
+    .offerContent{
+      padding: 10px;
+      @include border-radius (5px);
+      background-color: #fff;
+      @include tablet{
+        padding: 15px;
+      }
+      @include desktops{
+        padding: 30px;
+      }
+      .singleContent{
+        position: relative;
+        .media{
+          .media-left{
+            margin-right: 5px;
+            img{
+              @include border-radius (3px);
+            }
+          }
+          .media-body{
+            h4{
+              font-size: 14px;
+              font-weight: 400;
+              color: $text-title;
+              text-transform: capitalize;
+              @include desktops{
+                margin-top: 10px;
+              }
+            }
+            p{
+              font-size: 12px;
+              span{
+                color: $primary-color;
+                font-size: 14px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  /* Need Help Aria */
+  .needhelpAria{
+    h4{
+      font-size: 15px;
+      font-weight: 400;
+      color: $text-title;
+      padding-top: 15px;
+      @include tablet{
+        padding-top: 0px;
+      }
+    }
+    .needHelpContent{
+      background-color: #262a2e;
+      padding: 30px;
+      @include border-radius (5px);
+      p{
+        color: #fff;
+        line-height: 24px;
+      }
+      .btn-default{
+        background-color: $primary-color !important;
+        @include border-radius (0px);
+        border: none;
+        padding: 13px 27px;
+        color: #fff;
+        font-size: 18px;
+        font-weight: 600;
+        margin-top: 20px;
+        margin-bottom: 30px;
+        @include tablet{
+          padding: 13px 12px;
+          font-size: 14px;
+        }
+        @include desktops{
+          padding: 13px 32px;
+          font-size: 18px;
+        }
+        @include large-desktops{
+          padding: 13px 60px;
+        }
+        i{
+          color: #fff;
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+}
+
+/* === 16.8 BOOKING SECTION === */
+.bookingTypeSection{
+  margin-top: 80px;
+  margin-bottom: 30px;
+  .bookingType{
+    padding: 10px;
+    @include border-radius (5px);
+    @include tablet{
+      padding: 20px;
+    }
+    .bookingList{
+      li{
+        display: block;
+        padding: 10px;
+        @include tablet{
+          display: inline-block;
+          padding: 0 18px;
+        }
+
+        a{
+          font-size: 14px;
+          line-height: 24px;
+          color: $text-title;
+          text-transform: uppercase;
+          &.active,
+          &:hover,
+          &:active{
+            color: $primary-color;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* === 16.9 PROFILE SECTION === */
+.profileSection{
+  margin-top: 80px;
+  margin-bottom: 80px;
+  .profileImg{
+    img{
+      border-radius: 5px;
+    }
+  }
+  .profileContent{
+    .editIconRight{
+      float: right;
+      display: none;
+      i{
+        color: $primary-color;
+      }
+    }
+    .profileTitle{
+      margin-top: 30px;
+      margin-bottom: 30px;
+      @include tablet{
+        margin-top: 0;
+        margin-bottom: 30px;
+      }
+
+      h2{
+        font-size: 26px;
+        font-weight: 700;
+        color: #343434;
+      }
+      span{
+        font-size: 14px;
+      }
+    }
+    p{
+      font-size: 12px;
+      @include tablet{
+        font-size: 13px;
+      }
+      @include desktops{
+        font-size: 14px;
+        line-height: 26px;
+      }
+
+    }
+    .profileInfo{
+      strong{
+        color: #343434;
+        margin-right: 5px;
+      }
+    }
+    .profileSocialIcon{
+      a{
+        margin-right: 7px;
+        i{
+          width: 37px;
+          height: 37px;
+          line-height: 37px;
+          border-radius: 50%;
+          text-align: center;
+          color: $primary-color;
+          border: 1px solid #e7e7e7
+        }
+        &:hover{
+          i{
+            border: 1px solid $primary-color;
+            background-color: $primary-color;
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+  &:hover{
+    .editIconRight{
+      display: block;
+    }
+  }
+}
+
+/* === 16.10 ABOUT YOU SECTION === */
+.aboutYouSection{
+  margin-bottom: 70px;
+  h2{
+    font-size: 20px;
+    color: #343434;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+  p{
+    font-size: 12px;
+    @include tablet{
+      font-size: 13px;
+    }
+    @include desktops{
+      font-size: 14px;
+      line-height: 26px;
+    }
+  }
+}
+
+/* === 16.11 ACCOUNT SETTING SECTION === */
+.settingSection{
+  margin-top: 80px;
+  margin-bottom: 80px;
+  .settingContent{
+    padding: 10px;
+    @include border-radius (5px);
+    @include tablet{
+      padding: 15px;
+    }
+    @include desktops{
+      padding: 30px;
+    }
+    h4{
+      font-size: 20px;
+      font-weight: 400;
+      margin-bottom: 20px;
+    }
+    hr{
+      background-color: rgb( 229, 229, 229 );
+      height: 1px;
+    }
+    p{
+      color: $primary-color;
+      text-transform: capitalize;
+      margin-bottom: 20px;
+    }
+    .changePassword{
+      margin-top: 15px;
+      margin-bottom: 30px;
+    }
+    .changeEmail{
+      margin-top: 30px;
+      margin-bottom: 30px;
+    }
+    .form-control{
+      padding: 20px;
+      height: 50px;
+      margin-bottom: 20px;
+      border: none;
+      box-shadow: none;
+      -webkit-box-shadow: none;
+      @include tablet{
+        width: 50%;
+      }
+    }
+    .changeSetting{
+      margin-top: 30px;
+      margin-bottom: 30px;
+
+      .form-check{
+        input{
+          display: none;
+        }
+        .form-check-input {
+          margin-left: 4px;
+          margin-top: 6px;
+          padding: 5px;
+          opacity: 0;
+        }
+        .form-check-label {
+          padding-left: 0px;
+          margin-bottom: 10px;
+          font-size: 13px;
+          cursor: default;
+          color: lighten(desaturate(adjust-hue($primary-color, -28.5333), 100.0000), 2.9412);
+          font-weight: 400;
+        }
+        .checkbox-custom + .checkbox-custom-label{
+          &:before{
+            content: '';
+            background: $white-color;
+            border: 1px solid #dedede;
+            display: inline-block;
+            vertical-align: middle;
+            width: 13px;
+            height: 13px;
+            padding: 0;
+            margin-right: 10px;
+            text-align: center;
+            line-height: 13px;
+          }
+        }
+        .checkbox-custom:checked + .checkbox-custom-label:before {
+          content: "\f00c";
+          font-family: 'FontAwesome';
+          color: $white-color;
+          background: $primary-color;
+          border: 0px solid $primary-color;
+          font-size: 10px;
+          font-weight: normal;
+        }
+      }
+      .buttonTransparent{
+        margin-top: 18px;
+      }
+    }
+    .buttonTransparent{
+      width: 253px;
+      height: 45px;
+      line-height: 45px;
+      background-color: $primary-color;
+      color: #fff;
+      border: none;
+      margin-top: 10px;
+    }
+  }
+}
+
+/* === 16.12 SIGNUP & LOGIN PAGE === */
+.signupLoging{
+  .modal-dialog{
+    @include tablet{
+      width: 400px;
+    }
+  }
+  .modal-header{
+    border-top: 6px solid $primary-color;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    border-bottom: 0;
+    padding: 10px 20px;
+    .close{
+      font-size: 30px;
+      color: #222;
+      opacity: 1;
+      font-weight: 400;
+    }
+    .modal-title{
+      font-size: 20px;
+      font-weight: 700;
+      margin-top: 3px;
+    }
+  }
+  .modal-body{
+    padding: 10px 20px;
+    .form-group{
+      .form-control{
+        padding: 22px 18px;
+        border-color: #e5e5e5;
+        box-shadow: none;
+
+      }
+    }
+    .checkbox{
+      margin-bottom: 12px;
+      .forgotPass{
+        float: right;
+      }
+    }
+    .btn-default{
+      width: 100%;
+      background-color: $primary-color;
+      border: none;
+      color: #fff;
+      margin-top: 3px;
+    }
+    .or{
+      font-size: 15px;
+      color: $text-title;
+      text-align: center;
+      text-transform: uppercase;
+      margin: 15px;
+    }
+    .btnSocial{
+      background-color: #6684c4;
+      &:hover{
+        opacity: 1;
+      }
+    }
+  }
+
+  .modal-footer{
+    padding: 10px 20px;
+    border-top: 0;
+    text-align: center;
+    .dontHaveAccount{
+      p{
+        a{
+          color: $primary-color;
+        }
+      }
+    }
+  }
+}
