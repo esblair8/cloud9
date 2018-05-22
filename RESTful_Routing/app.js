@@ -124,7 +124,9 @@ app.delete("/blogs/:id", function(req, res){
     });
 });
 
+
+var port = process.env.PORT || "3000"
 // listen on cloud9 defined port and IP
-app.listen(process.env.PORT, process.env.IP, function(){
-    console.log("Blog app server up");
+app.listen(port, process.env.IP, function(){
+    console.log("Blog app server up on port " + port);
 });
